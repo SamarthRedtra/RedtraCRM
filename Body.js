@@ -7,7 +7,7 @@ import * as Device from "expo-device";
 
 const Body = () => {
     const [expoPushToken, setExpoPushToken] = useState('');
-    // const [notification, setNotification] = useState(false);
+    // const [notification, setNotification] = useState(false); test
     const notificationListener = useRef();
     const responseListener = useRef();
 
