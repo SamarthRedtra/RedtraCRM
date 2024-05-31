@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "RedtraCrm",
-    "slug": "RedtraCrm",
+    "slug": "redtracrm",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -13,21 +13,21 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.mayureshju.RedtraCrm"
+      "bundleIdentifier": "com.redtra.RedtraCrm"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.mayureshju.RedtraCrm"
+      "package": "com.redtra.RedtraCrm"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "7827aa6e-7341-41b9-8985-56312c214ac5"
+        "projectId": "0b25dba7-554f-45e5-b39c-07bfb3df9b7d"
       }
     }
   }

@@ -110,6 +110,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
+        margin:0
     },
 });
 
@@ -154,7 +155,7 @@ async function registerForPushNotificationsAsync() {
         if (finalStatus !== 'granted') {
             return;
         }
-        token = (await Notifications.getExpoPushTokenAsync({projectId: '1993b9ba-b472-4c4b-872b-eb455ca112bf'})).data;
+        token = (await Notifications.getExpoPushTokenAsync({projectId: '0b25dba7-554f-45e5-b39c-07bfb3df9b7d'})).data;
     } else {
         alert('Must use physical device for Push Notifications');
     }
