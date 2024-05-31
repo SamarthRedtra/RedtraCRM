@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
-import {BackHandler, Platform, StyleSheet, View} from "react-native";
+import {BackHandler, Platform, StyleSheet, View,ScrollView,RefreshControl} from "react-native";
 import {useSafeAreaInsets} from "react-native-safe-area-context";
 import WebView from "react-native-webview";
 import * as Notifications from "expo-notifications";
@@ -10,6 +10,8 @@ const Body = () => {
     // const [notification, setNotification] = useState(false); test
     const notificationListener = useRef();
     const responseListener = useRef();
+    const [isRefreshing, setIsRefreshing] = useState(false);
+
 
     const insets = useSafeAreaInsets();
     const [jsToInject, setJsToInject] = useState('');
@@ -72,8 +74,22 @@ const Body = () => {
             webView?.current?.injectJavaScript?.(jsToInject);
         }
     }, [expoPushToken]);
+    const onRefresh = useCallback(() => {
+        setIsRefreshing(true);
+        webView.current.reload();
+        setIsRefreshing(false);
+    }, []);
 
     return (
+
+        <ScrollView
+        contentContainerStyle={{flex: 1}}
+        refreshControl={
+            <RefreshControl
+                refreshing={isRefreshing}
+                onRefresh={onRefresh}
+            />
+        }>
         <View style={{
             width: '100%',
             height: '100%',
@@ -101,6 +117,7 @@ const Body = () => {
                 />
             </View>
         </View>
+        </ScrollView>
     );
 };
 
